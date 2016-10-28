@@ -1,0 +1,189 @@
+
+
+footer {
+
+	display: flex;
+    justify-content: center;
+	padding: 1em 1em;
+	width: 100%;
+	background-color: $footer-bg-color;
+	margin: 0;
+
+	nav {
+		width: 100%;
+		//max-width: 650px;
+		@media (min-width: 712px ) {
+			width: 80%;	
+		}
+		@media ( min-width: 850px ) {
+			width: 60%;
+		}
+	}
+	ul.footer-list {
+		list-style: none;
+		display: flex;
+	    align-items: center;
+	    padding: .25em 0;
+	    margin: 0; 
+	}
+	%horz-rule-bookends {
+		color: white;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: center;
+	    align-items: center;
+	    hr {
+			flex-grow: 1;
+	    }
+	}
+	%footer-font-size {
+		font-size: 16px;
+		@media ( min-width: 950px ) {
+			font-size: 18px;	
+		}
+		@media (min-width: 1040px) {
+			font-size: 20px; 	
+		}
+	}
+	#footer-precursor{
+	    @extend %horz-rule-bookends;
+	    p {
+	    	margin: 0;
+	    	padding-left: .5em;
+    		padding-right: .5em;
+
+	    	@extend %footer-font-size;
+
+	    }
+	}
+	#footer-top-row {
+		ul {
+			justify-content: space-between;
+			@media ( min-width: 1253px ) {
+				justify-content: space-around;
+			}
+		}
+		//Display flex shrinks/scales the logo images, so no styling is required
+		li:hover {
+			background-color: $footer-hover-color;
+		}
+		ul li {
+			text-align: center;
+		}
+		
+		@media ( min-width: 1253px ) {
+			//Max-widths for logos
+			li#menu-item-216 img { //UIC Logo
+				width: 107px;
+				box-sizing: content-box;
+			}
+			li#menu-item-217 img { //Refine Logo
+				width: 102px;
+				box-sizing: content-box;
+			}
+			li#menu-item-218 img { //UIC Flats Logo
+				width: 153px;
+				box-sizing: content-box;
+			}
+			li#menu-item-219 img { //Blackbird Logo
+				width: 142px;
+				box-sizing: content-box;
+			}
+		}
+	}
+	#footer-middle-row {
+		text-align: center;
+		
+		ul { 
+			flex-wrap: wrap; //The whole line will wrap
+
+			li {
+
+				padding: 0 1em;
+				@media ( min-width: 850px ) {
+					padding: 0 .5em;
+				}
+				@media ( min-width: 1300px ) {
+					padding: 0 1.5em;
+				}
+				@media ( min-width: 2000px ) {
+					padding: 0 3em;
+				}
+				
+				@extend %footer-font-size;
+
+				a {
+					font-size: inherit;
+					color: white;
+					&:hover {
+						color: $footer-hover-color;
+					}
+				}
+			}
+		}
+	}
+	#footer-bottom-row {
+		@extend %horz-rule-bookends;
+
+		ul li {
+			padding: 0 .5em;
+			@media ( min-width: 580px ) {
+				padding: 0 1em;	
+			}
+			
+			font-size: 18px;
+			@media (min-width: 1040px) {
+				font-size: 20px; 	
+			}
+		}
+
+		a {
+			font-size: inherit;
+			color: white;
+			&:hover {
+				color: $footer-hover-color;
+			}
+		}
+	}
+	hr {
+		border-width: 1px;
+		@include breakpoint(medium) {
+			border-width: 1px;
+		}
+    	border-color: white;
+    	margin-top: 10px;
+	    margin-bottom: 10px;
+	}
+	
+}
+
+img.footer-logo {
+	@media ( min-width: 500px ) and ( max-width: 650px ) {
+		width: 75%;
+	}
+	@media ( min-width: 650px ) and ( max-width: 850px ) {
+		width: 65%;
+	} 
+	@media ( min-width: 850px ) and ( max-width: 1253px ) {
+		width: 75%;
+	} 
+	//Max-widths under #footer-top-row
+	
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+//Flexbox Justify Content Helper Classes
+.justify-content-space-between {
+	justify-content: space-between;
+}
+.justify-content-center {
+	justify-content: center;
+}
+
+li#menu-item-141 { //The divider between the address and phone number (2nd list item)
+	@media ( max-width: 580px ) {
+		display: none;
+		padding: 0;
+	}
+}

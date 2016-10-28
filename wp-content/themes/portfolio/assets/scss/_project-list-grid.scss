@@ -1,0 +1,57 @@
+#project-list-grid {
+	
+	@include breakpoint(medium) {
+		//padding-bottom: 5%;
+	}
+	.row {
+		//max-width: none; //To prevent there from being a side gutter on larger screens
+		.column, .columns {
+		    //Remove default Foundation column padding 
+		    padding-left: 0;
+		    padding-right: 0; 
+		}
+	}
+	.project-thumbnail {
+		background-size: cover;
+		width: 100%;
+		padding-bottom: 66%; 
+		position: relative;
+		background-position: center center;
+	}
+	
+}
+
+.project-thumbnail-details {
+	height: 300px; //This ensures that the height of the details divs are as big as the height of the row
+	color: black;
+	background-color: white; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+	align-items: flex-start;
+	padding: 1em;
+    
+/*     hr {
+    	height: auto;
+    	width: 5%;
+    	border-color: black;
+    } */
+    .project-title {
+		font-weight: 600;
+		font-size: 30px;
+    }
+    .project-category {
+		font-weight: 300;
+		font-size: 24px;
+		margin-bottom: 0;
+		padding-right: 5em;
+	    padding-bottom: .5em;
+    }
+    .project-year {
+    	font-weight: 300;
+		font-size: 18px;
+    }
+}
+.project-details-darkened-bg {//Applied by javascript to darken the background
+	background-color: $image-overlay-bg-color;
+}

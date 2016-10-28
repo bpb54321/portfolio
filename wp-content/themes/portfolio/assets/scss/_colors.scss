@@ -1,0 +1,39 @@
+//Colors for the Refine theme.
+
+//Old Refine Colors
+$slate: #96a3a4;
+$foam: #a2d8c9;
+$sea: #5cc19d;
+$fawn: #efebd0;
+$pumpkin: #ec993b;
+$forest: #232822;
+
+//New UIC Homes Palette
+$dark-gray: #4c4C4E;//Current footer color
+$light-gray: #D3D4D3; //Current header color
+$bright-green: #7FC241; 
+$dusty-cyan: #009DD3; //->transition from current cyan/$sea
+$light-cyan: #ACEAFF; // -> transition from light blue
+$magenta: #fc3d50;
+
+//Functional Color Variables
+$header-global-color: $dark-gray;
+$h3-color: $dusty-cyan;
+$sub-header-color: $dark-gray;
+$cta-button-color: $dusty-cyan;
+$footer-cta-background-color: $light-gray;
+$header-bg-color: $dark-gray;
+$footer-bg-color: $dark-gray;
+$footer-hover-color: $light-gray;
+$offcanvas-menu-bg-color: $light-cyan;
+$offcanvas-menu-hover-color: $dark-gray;
+$link-to-file-color: $dark-gray;
+$image-overlay-bg-color: $light-gray;
+//$image-link-box-bg-color: $dusty-cyan; 
+$global-link-color: $dusty-cyan;
+$image-header-bg-color: $dusty-cyan;
+
+//Color Classes
+.light-gray {
+	color: $light-gray;
+}

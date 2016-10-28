@@ -1,0 +1,38 @@
+.main-article {
+	padding: 5% 1em;
+    @include breakpoint(medium) {
+        padding: 5% 15%;
+    }
+    font-weight: 300;
+}
+h3.title {
+	color: $h3-color;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.2;
+    /* margin-top: 2em; */
+    margin-bottom: .25em;
+    margin-left: 0;
+    margin-right: 0;
+}
+.categories {
+	margin-bottom: 1em;
+    font-weight: 300;
+    h3.single-project-category-string {
+        font-weight: inherit;
+    }
+    h3.single-project-year-string {
+        font-weight: inherit;
+        font-size:20px;
+    }
+}
+
+.link-to-file {
+    color: $link-to-file-color;
+    display: block;
+    margin-bottom: 1rem;
+    a {
+        padding-right: .5em;
+        text-decoration: underline;
+    }
+}
