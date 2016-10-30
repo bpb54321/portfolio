@@ -64,8 +64,7 @@
 
 					<header class="header" role="banner">
 
-						 <!-- This navs will be applied to the topbar, above all content
-							  To see additional nav styles, visit the /parts directory -->
-						 <?php get_template_part( 'parts/nav', 'vertical-overlay' ); ?>
-
+						 <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
+             <?php joints_top_nav(); ?>
+             
 					</header> <!-- end .header -->
