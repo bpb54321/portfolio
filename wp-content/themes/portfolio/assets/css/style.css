@@ -4523,10 +4523,6 @@ header::after {
     text-align: right;
     font-style: normal; }
 
-.project-gallery .row .column, .project-gallery .row .columns, .project-gallery .row .columns {
-  padding-left: 0;
-  padding-right: 0; }
-
 .project-gallery .project-thumbnail {
   background-size: cover;
   width: 100%;
