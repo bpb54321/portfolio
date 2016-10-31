@@ -1,113 +1,36 @@
-$menu-width-small: 100%;
-$menu-width-medium: 45%;  
-
-
-#top-navigation {
-	z-index: 10; //So that it will always be on top, even when you have the project overlay divs
-	background-color: rgba($header-bg-color,0.20);
-	position: fixed;
-    width: 100%;
-    height: 50px;
-    @include breakpoint(medium) {
-        height: 70px;
-    }
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: 5%;
-	padding-right: 5%;
+header {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	max-width: $global-width;
+	margin: 0 auto;
+	position: relative;
+	letter-spacing: 1px;
 }
-#logo-link-wrapper {
-	height: 100%;
-	//Display #logo (which is a child of #logo-link-wrapper) vertically centered.
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-#logo {
-	height: 100%; //Of it's containing anchor tag
-	@media (max-width: 440px) {
-		/* width: 50vw;
-		height: auto; */
-	}
-}
-#hamburger-container {
-	height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .menu-icon {
-    	@include hamburger(
-		  $color: white,
-		  $color-hover: $offcanvas-menu-bg-color,
-		  $width: 40px,
-		  $height: 30px,
-		  $weight: 6px,
-		  $bars: 3
-		);
-    }
-}
-#primary-menu {
-	background-color: rgba($offcanvas-menu-bg-color, .9);
-	
-	//Menu takes up full height of viewport when active
-	height: 100vh;
-	
-	//Use flex to center the <ul> in the #primary-menu <div>
-	//display: flex;
-	display: none;
-	flex-direction: row;
-	justify-content: center;
 
-	top: 0px;
-	
-	//Menu width
-	width: $menu-width-small;
-	@include breakpoint(medium) {
-		width: $menu-width-medium;
-	}
-	
-	//Positions the menu off-canvas initially
-	position: absolute; 
-	right: -$menu-width-small;
-	@include breakpoint(medium) {
-		right: -$menu-width-medium;
-	}
-
-	ul {
-		//Line up the <li> elements vertically in the <ul>
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		a {
-			text-align: right;	
-			color: inherit;
-			&:hover {
-				color: $offcanvas-menu-hover-color;
-			}
-		}
-	}
-
-	//Applies to all child elements of #primary-menu
-	color: white;
-	font-size: 3em;
-	font-weight: bold;
+header::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#site-title {
+	float: left;
+	font-size: rem-calc(28);
+  font-weight: bold;
 	text-transform: uppercase;
 }
-
-#menu-close-div {
+#menu-primary-navigation {
+	float: right;
+	margin: 0;
 	position: absolute;
-    width: 100%;
-    top: 0;
-    right: 0;
-    text-align: right;
-    padding-right: 5%;
-    a {
-    	color: white;
-    	&:hover {
-			color: $offcanvas-menu-hover-color;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+	li {
+		display: inline-block;
+		padding: 0 .5em;
+		a {
+			display: block;
+			text-transform: uppercase;
 		}
-    }
+	}
 }
-
-

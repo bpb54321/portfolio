@@ -12,19 +12,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta class="foundation-mq">
 
-
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans:400,700" rel="stylesheet">
+    <!-- End Web Fonts -->
+    
 		<!-- Icons & Favicons -->
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<!--<link href="<?php //echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" /> -->
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
-		<!-- <meta name="msapplication-TileColor" content="#f01d4f"> -->
-		<!--<meta name="msapplication-TileImage" content="<?php //echo get_template_directory_uri(); ?>/assets/images/win8-tile-icon.png">-->
-    	<!-- <meta name="theme-color" content="#121212"> -->
-
-
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!--Manually enqueue Gravity Forms scripts and styles-->
 		<?php
@@ -50,10 +47,6 @@
 		?>
 		<!-- end analytics -->
 
-		<!--Font Awesome CDN -->
-		<script src="https://use.fontawesome.com/645de6072f.js"></script>
-		<!--End Font Awesome CDN-->
-
 	</head>
 
 	<!-- Uncomment this line if using the Off-Canvas Menu -->
@@ -66,5 +59,5 @@
 
 						 <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
              <?php joints_top_nav(); ?>
-             
+
 					</header> <!-- end .header -->

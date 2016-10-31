@@ -6,7 +6,7 @@
     font-weight: 300;
 }
 h3.title {
-	color: $h3-color;
+	color: $primary-color;
     font-weight: 300;
     font-size: 48px;
     line-height: 1.2;
@@ -28,7 +28,7 @@ h3.title {
 }
 
 .link-to-file {
-    color: $link-to-file-color;
+    color: $primary-color;
     display: block;
     margin-bottom: 1rem;
     a {

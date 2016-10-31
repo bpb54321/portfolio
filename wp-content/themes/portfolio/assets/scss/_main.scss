@@ -8,29 +8,11 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 html {
-	font-size: 18px
+	font-size: 16px
 }
 body {
 	font-weight: normal;
-	//font-size: 16px;
 }
-.cta-button {
-	background-color: $cta-button-color; 
-    color: white;
-    font-weight: bold;
-    display: block;
-    //margin-left: auto;
-    //margin-right: auto;
-    margin-top: 2em;
-    margin-bottom: 2em; 
-    padding: 1em 2em;
-    @include breakpoint(medium) {
-    	padding: 1.5em 2.5em;
-    }
-    
-
-}
-
 iframe {
 	width: 100%;
 }
@@ -39,7 +21,7 @@ LINK STYLES
 *********************/
 a, a:visited {
 
-	color: $global-link-color;
+	color: $primary-color;
 
 	// Mobile tap color
 	&:link {
@@ -55,7 +37,7 @@ $light-weight: 300;
 $semibold-weight: 600;
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	color: $header-global-color;
+	color: $primary-color;
 	// Removing text decoration from all headline links
 	a {
 		text-decoration: none;
@@ -90,117 +72,10 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
-.header {
-	ul.off-canvas-list li {
-		list-style: none;
-	}
-} 
-.hero-image {
-	width: 100%;
-    height: 75vh;
-    background-size: cover;
-    background-position: center;
 
-	background-color: $image-header-bg-color; //In case javascript disabled for responsive header images
-
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-#video-container {
-	@media (max-width: 640px) {
-		video {
-			width: 200%;
-		    position: relative;
-		    left: -50%;  	
-		}
-	} 
-}
-svg#video-play-overlay-button {
-	polygon {
-		fill: $dusty-cyan;
-		stroke: $dusty-cyan;
-	}
-	rect {
-		opacity: .6;
-	}
-}
-#video-container-android {
-	position: absolute;
-	top: 0;
-	video {
-		width: 100%;
-	    height: 75vh;
-	    background-color: black;
-	}
-}
-.youtube-header-container {
-	padding-top: 56%; //To ensure correct video aspect ratio
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-
-	iframe { 
-		position: absolute;
-	    top: 0;
-	    left: 0;
-	    bottom: 0;
-	    right: 0;
-	    height: 100%;
-	}
-}
-%hero-image-slideshow-dimensions {
-	width: 100%;
-	height: 33vh !important;
-	@media (min-width: 400px) and (max-width: 800px) {
-		height: 50vh !important;
-	}
-	@media (min-width: 800px) {
-		height: 75vh !important;
-	}
-}
-.hero-image-slideshow {
-	@extend %hero-image-slideshow-dimensions;
-	margin-bottom: 1rem !important;
-	.slick-dots {
-		margin-left: 0;
-	}
-	.slick-slide {
-		opacity: 1; //Don't want the inactive slides to be dimmed on header slideshow
-	}
-}
-.image-slideshow-replacement {
-	background-color: $image-header-bg-color; //When there are no images
-}
-.hero-image-slide {
-	@extend %hero-image-slideshow-dimensions;
-	background-position: center center;
-	background-size: cover;
-}
-
-    
 /*********************
 NAVIGATION STYLES
 *********************/
-.top-bar {
-	.title-area {
-		z-index: 1;
-	}
-} 
-
-.off-canvas-list {
-	ul {
-		margin-left: 0;
-		li {
-			a {
-				border-bottom: 0px;
-			}
-		}
-		.dropdown {
-			margin-left: 20px;
-		}
-	}
-}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -213,15 +88,15 @@ POSTS & CONTENT STYLES
 
 .single-title,
 .page-title {
-	
+
 }
 
 .single-title {
-	
+
 }
 
 .page-title {
-	
+
 	// Remove Foundation vcard styling from author page titles
 	.vcard {
 		border: 0px;
@@ -233,37 +108,37 @@ POSTS & CONTENT STYLES
 
 }
 
-// Post meta  
+// Post meta
 .byline {
 	color: #999;
 	time {}
 }
 
-// Entry content  
+// Entry content
 .entry-content {
-	
+
 	img {
 		max-width: 100%;
 		height: auto;
 	}
 
-	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
-		display: inline; 
-		float: left; 
+	.alignleft, img.alignleft {
+		margin-right: 1.5em;
+		display: inline;
+		float: left;
 	}
-	.alignright, img.alignright { 
-		margin-left: 1.5em; 
-		display: inline; 
-		float: right; 
+	.alignright, img.alignright {
+		margin-left: 1.5em;
+		display: inline;
+		float: right;
 	}
-	.aligncenter, img.aligncenter { 
-		margin-right: auto; 
-		margin-left: auto; 
-		display: block; 
-		clear: both; 
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
 	}
-			
+
 	video, object {
 		max-width: 100%;
 		height: auto;
@@ -275,14 +150,14 @@ POSTS & CONTENT STYLES
 		padding: 10px;
 		}
 
-} 
+}
 
 .wp-caption {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
 
-	// Images inside wp-caption  
+	// Images inside wp-caption
 	img {
 		max-width: 100%;
 		margin-bottom: 0;
@@ -294,7 +169,7 @@ POSTS & CONTENT STYLES
 		margin: 4px 0 7px;
 		text-align: center;
 	}
-} 
+}
 
 // Add Foundation styling to password protect button
 .post-password-form input[type="submit"] {
@@ -318,7 +193,7 @@ IMAGE GALLERY STYLES
 
 		dd {}
 
-} 
+}
 
 // Gallery caption styles
 .gallery-caption {}
@@ -371,7 +246,7 @@ COMMENT STYLES
 			.alt {}
 			.odd {}
 			.even {}
-			.depth-1 {}           // Change number for different depth  
+			.depth-1 {}           // Change number for different depth
 			.byuser {}
 			.bypostauthor {}
 			.comment-author-admin {}
@@ -400,7 +275,7 @@ COMMENT STYLES
 	li.depth-4 {}
 	li.depth-5 {}
 
-	// General comment classes  
+	// General comment classes
 	.alt {}
 	.odd {
 	}
@@ -417,7 +292,7 @@ COMMENT STYLES
 	.thread-odd {}
 	.thread-even {}
 
-	// vcard  
+	// vcard
 	.vcard {
 		margin-left: 50px;
 
@@ -454,10 +329,10 @@ COMMENT STYLES
 			background: #fff;
 		}
 
-	} // end .commentlist .vcard  
+	} // end .commentlist .vcard
 
 
-	// comment meta  
+	// comment meta
 	.comment-meta {
 
 		a {}
@@ -470,7 +345,7 @@ COMMENT STYLES
 
 	}
 
-	// comment content  
+	// comment content
 	.comment_content {
 
 		p {
@@ -479,20 +354,20 @@ COMMENT STYLES
 			line-height: 1.5em;
 		}
 
-	} // end .commentlist .comment_content  
+	} // end .commentlist .comment_content
 
-	// comment reply link  
+	// comment reply link
 	.comment-reply-link {
 		float: right;
 
 		&:hover,
 		&:focus {
-		
+
 		}
 
-	} // end .commentlist .comment-reply-link  
+	} // end .commentlist .comment-reply-link
 
-} // end .commentlist  
+} // end .commentlist
 
 /*********************
 COMMENT FORM STYLES
@@ -528,7 +403,7 @@ COMMENT FORM STYLES
 				background: #fff;
 			}
 
-			// form validation  
+			// form validation
 			&:invalid {
 				outline: none;
 				border-color: #fbc2c4;
@@ -556,28 +431,28 @@ COMMENT FORM STYLES
 	}
 }
 
-// comment submit button  
+// comment submit button
 #submit {}
 
-// comment form title  
+// comment form title
 #comment-form-title {
 	margin: 0 0 1.1em;
 }
 
-// cancel comment reply link  
+// cancel comment reply link
 #cancel-comment-reply {
 	a {}
 }
 
-// logged in comments  
+// logged in comments
 .comments-logged-in-as {}
 
-// allowed tags  
+// allowed tags
 #allowed_tags {
 	margin: 1.5em 10px 0.7335em 0;
 }
 
-// No comments  
+// No comments
 .nocomments {
 	margin: 0 20px 1.1em;
 }
@@ -607,7 +482,7 @@ SIDEBARS & ASIDES
 
 			a {}
 
-			// deep nesting  
+			// deep nesting
 			ul {}
 
 		}
@@ -620,7 +495,7 @@ FOOTER STYLES
 	clear: both;
 	//margin-top: 1em;
 }
-	
+
 /*********************
 FOUNDATION STYLES
 *********************/

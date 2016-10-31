@@ -6,14 +6,14 @@ footer {
     justify-content: center;
 	padding: 1em 1em;
 	width: 100%;
-	background-color: $footer-bg-color;
+	background-color: $secondary-color;
 	margin: 0;
 
 	nav {
 		width: 100%;
 		//max-width: 650px;
 		@media (min-width: 712px ) {
-			width: 80%;	
+			width: 80%;
 		}
 		@media ( min-width: 850px ) {
 			width: 60%;
@@ -24,7 +24,7 @@ footer {
 		display: flex;
 	    align-items: center;
 	    padding: .25em 0;
-	    margin: 0; 
+	    margin: 0;
 	}
 	%horz-rule-bookends {
 		color: white;
@@ -39,10 +39,10 @@ footer {
 	%footer-font-size {
 		font-size: 16px;
 		@media ( min-width: 950px ) {
-			font-size: 18px;	
+			font-size: 18px;
 		}
 		@media (min-width: 1040px) {
-			font-size: 20px; 	
+			font-size: 20px;
 		}
 	}
 	#footer-precursor{
@@ -65,12 +65,12 @@ footer {
 		}
 		//Display flex shrinks/scales the logo images, so no styling is required
 		li:hover {
-			background-color: $footer-hover-color;
+			background-color: $primary-color;
 		}
 		ul li {
 			text-align: center;
 		}
-		
+
 		@media ( min-width: 1253px ) {
 			//Max-widths for logos
 			li#menu-item-216 img { //UIC Logo
@@ -93,8 +93,8 @@ footer {
 	}
 	#footer-middle-row {
 		text-align: center;
-		
-		ul { 
+
+		ul {
 			flex-wrap: wrap; //The whole line will wrap
 
 			li {
@@ -109,14 +109,14 @@ footer {
 				@media ( min-width: 2000px ) {
 					padding: 0 3em;
 				}
-				
+
 				@extend %footer-font-size;
 
 				a {
 					font-size: inherit;
 					color: white;
 					&:hover {
-						color: $footer-hover-color;
+						color: $secondary-color;
 					}
 				}
 			}
@@ -128,12 +128,12 @@ footer {
 		ul li {
 			padding: 0 .5em;
 			@media ( min-width: 580px ) {
-				padding: 0 1em;	
+				padding: 0 1em;
 			}
-			
+
 			font-size: 18px;
 			@media (min-width: 1040px) {
-				font-size: 20px; 	
+				font-size: 20px;
 			}
 		}
 
@@ -141,7 +141,7 @@ footer {
 			font-size: inherit;
 			color: white;
 			&:hover {
-				color: $footer-hover-color;
+				color: $secondary-color;
 			}
 		}
 	}
@@ -154,7 +154,7 @@ footer {
     	margin-top: 10px;
 	    margin-bottom: 10px;
 	}
-	
+
 }
 
 img.footer-logo {
@@ -163,12 +163,12 @@ img.footer-logo {
 	}
 	@media ( min-width: 650px ) and ( max-width: 850px ) {
 		width: 65%;
-	} 
+	}
 	@media ( min-width: 850px ) and ( max-width: 1253px ) {
 		width: 75%;
-	} 
+	}
 	//Max-widths under #footer-top-row
-	
+
     padding-left: 5px;
     padding-right: 5px;
 }

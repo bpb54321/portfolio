@@ -1,15 +1,15 @@
 .gform_footer input[type=submit] {
-    background-color: $cta-button-color;
+    background-color: $primary-color;
 }
 
 .google-map {
-	text-align: center; 
+	text-align: center;
 	pointer-events:none;
 	@include breakpoint(medium) {
-		pointer-events: auto; 
+		pointer-events: auto;
 	}
 }
 
-div.reveal { //Reveal modal padding 
+div.reveal { //Reveal modal padding
 	padding: 2rem;
 }

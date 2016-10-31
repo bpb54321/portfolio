@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -7,11 +8,6 @@
 		//error_log('----------------------------$secondary_content------------------');
 		//error_log( var_export($secondary_content,true) );
 	?>
-	
-	<section class="summary-text">
-		<?php echo $secondary_content; ?>
-		<?php get_template_part( 'parts/components', 'cta-button' ); ?>
-	</section>
 
 	<!--Image Link Grid for Models -->
 	<?php
