@@ -4453,75 +4453,8 @@ header::after {
       display: block;
       text-transform: uppercase; }
 
-.tag-line {
-  color: #222;
-  font-weight: 300;
-  font-size: 42px;
-  line-height: 1.2;
-  /* margin-top: 2em; */
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0; }
-  @media (min-width: 640px) {
-    .tag-line {
-      font-size: 48px; } }
-
-.sub-header {
-  color: #222;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 1.2;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0; }
-  @media (min-width: 640px) {
-    .sub-header {
-      font-size: 36px; } }
-
-.summary-text {
-  text-align: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 1em;
-  padding-right: 1em; }
-  @media (min-width: 640px) {
-    .summary-text {
-      padding-right: 10%;
-      padding-left: 10%; } }
-  .summary-text p {
-    margin: 2em 0;
-    padding-left: 0;
-    padding-right: 0; }
-    @media (min-width: 640px) {
-      .summary-text p {
-        padding-left: 8%;
-        padding-right: 8%; } }
-  .summary-text .cta-button {
-    margin-left: auto;
-    margin-right: auto; }
-
-.testimonial {
-  text-align: left;
-  font-style: italic;
-  font-size: 22px;
-  color: #222;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 15%;
-  padding-bottom: 15%; }
-  @media screen and (min-width: 40em) {
-    .testimonial {
-      font-size: 27px; } }
-  @media screen and (min-width: 40em) {
-    .testimonial {
-      padding-left: 10%;
-      padding-right: 10%; } }
-  @media screen and (min-width: 40em) {
-    .testimonial {
-      padding-top: 10%; } }
-  .testimonial #customer-name {
-    text-align: right;
-    font-style: normal; }
+.project-gallery .row {
+  margin-bottom: 3.75rem; }
 
 .project-gallery .project-thumbnail {
   background-size: cover;
