@@ -4422,7 +4422,6 @@ PLUGIN STYLES
 header {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  max-width: 75rem;
   margin: 0 auto;
   position: relative;
   letter-spacing: 1px; }
@@ -4442,10 +4441,13 @@ header::after {
   float: right;
   margin: 0;
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
+  @media screen and (min-width: 40em) {
+    #menu-primary-navigation {
+      right: 15px; } }
   #menu-primary-navigation li {
     display: inline-block;
     padding: 0 .5em; }

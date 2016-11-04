@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @param Boolean $expanded : Whether the image link grid should expand to full width, or have a Foundation default max-width.
  */
@@ -9,12 +9,12 @@ function echo_image_link_grid( $projects_query, $num_projects_row_medium, $image
 	} else {
 		$expanded_class = "";
 	}
-	
+
 	$total_available_projects = sizeof($projects_query->posts);
 
 	$num_project_rows = ceil( $total_available_projects/$num_projects_row_medium ) ;
 
-	$num_columns_project = 12 / $num_projects_row_medium; 
+	$num_columns_project = 12 / $num_projects_row_medium;
 
 	echo "<section class='project-gallery' data-project-count='{$total_available_projects}'>";
 		for ( $project_count = 0, $row_count = 0; $project_count < $total_available_projects; $project_count++, $row_count = floor($project_count/$num_projects_row_medium) ) {
@@ -25,10 +25,10 @@ function echo_image_link_grid( $projects_query, $num_projects_row_medium, $image
 						$project = $projects_query->posts[$project_count];
 						$image_src_string = get_featured_image_src( $project, 'large' );
 						$project_permalink = get_permalink( $project );
-					
+
 						if ( $image_overlay_style == "hover_title_categories" ) {
 							$project_post_category_string = get_post_category_string($project);
-							$project_grid_tile_html = 
+							$project_grid_tile_html =
 
 							"<div class='project-thumbnail project-thumbnail-{$project_count}' style='background-image: url( {$image_src_string} )'>
 								<a href='{$project_permalink}'>
@@ -55,13 +55,13 @@ function echo_image_link_grid( $projects_query, $num_projects_row_medium, $image
 								</a>
 							</div>";
 						}
-							
+
 						echo $project_grid_tile_html;
 					echo "</div>";
 			if ( $project_count%$num_projects_row_medium==($num_projects_row_medium-1) ) {
 				echo "</div><!--End .row-->";
 			}
-		} 
+		}
 		wp_reset_postdata();
 	echo "</section>";
 }

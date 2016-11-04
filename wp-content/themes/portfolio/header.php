@@ -15,7 +15,7 @@
     <!-- Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans:400,700" rel="stylesheet">
     <!-- End Web Fonts -->
-    
+
 		<!-- Icons & Favicons -->
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<!--<link href="<?php //echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" /> -->
@@ -55,9 +55,9 @@
 
 				<div class="off-canvas-content" data-off-canvas-content>
 
-					<header class="header" role="banner">
-
-						 <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
-             <?php joints_top_nav(); ?>
+					<header class="header row column" role="banner">
+            
+               <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
+               <?php joints_top_nav(); ?>
 
 					</header> <!-- end .header -->

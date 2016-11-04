@@ -1,7 +1,6 @@
 header {
 	padding-top: 4rem;
 	padding-bottom: 4rem;
-	max-width: $global-width;
 	margin: 0 auto;
 	position: relative;
 	letter-spacing: 1px;
@@ -22,7 +21,10 @@ header::after {
 	float: right;
 	margin: 0;
 	position: absolute;
-  right: 0;
+  right: map-get($grid-column-gutter, small)/2; //Column gutter values from Foundation _settings.scss
+	@include breakpoint (medium) {
+		right: map-get($grid-column-gutter, medium)/2;
+	}
   top: 50%;
   transform: translateY(-50%);
 	li {
