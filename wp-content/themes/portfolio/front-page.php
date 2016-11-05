@@ -3,16 +3,8 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+	<!--Image Link Grid for Projects -->
 	<?php
-		$secondary_content = get_post_meta($post->ID, 'front_page_secondary_editor_wysiwyg', true);
-		//error_log('----------------------------$secondary_content------------------');
-		//error_log( var_export($secondary_content,true) );
-	?>
-
-	<!--Image Link Grid for Models -->
-	<?php
-		//Include the function that generates the link grid HTML
-		include_once( get_template_directory() . '/parts/components-image-link-grid.php' );
 
 		//Query all available projects
 		$args = array (
@@ -24,20 +16,51 @@
 
 		// The Query
 		$projects_query = new WP_Query( $args );
-		//error_log( var_export($projects_query,true) );
 
 		$num_projects_row_medium = get_post_meta($post->ID, 'front_page_project_grid_num_columns_selection', true);
-		//error_log('-----------------$num_projects_row_medium------------------');
-		//error_log( print_r( $num_projects_row_medium,true) );
 
 		if ( $num_projects_row_medium === '' ) {
 			$num_projects_row_medium = 3; //Default value in case the meta value hasn't been saved to the db yet
 		}
 
 		$image_overlay_style = "hover_title_categories";
-		//$image_overlay_style = "static_title_only";
 
-		echo_image_link_grid( $projects_query, $num_projects_row_medium, $image_overlay_style, false );
+		$total_available_projects = sizeof($projects_query->posts);
+
+		$num_project_rows = ceil( $total_available_projects/$num_projects_row_medium ) ;
+
+		$num_columns_project = 12 / $num_projects_row_medium;
+
+		echo "<section class='project-gallery' data-project-count='{$total_available_projects}'>";
+			for ( $project_count = 0, $row_count = 0; $project_count < $total_available_projects; $project_count++, $row_count = floor($project_count/$num_projects_row_medium) ) {
+				if ( $project_count % $num_projects_row_medium == 0 ) {
+					echo "<div class='row'>";
+				}
+						echo "<div class='small-12 medium-{$num_columns_project} columns project-thumbnail-container'>";
+							$project = $projects_query->posts[$project_count];
+							$image_src_string = get_featured_image_src( $project, 'large' );
+							$project_permalink = get_permalink( $project );
+
+								$project_post_category_string = get_post_category_string($project);
+								$project_grid_tile_html =
+
+								"<div class='project-thumbnail project-thumbnail-{$project_count}' style='background-image: url( {$image_src_string} )'>
+									<a href='{$project_permalink}'>
+										<div class='project-thumbnail-overlay'>
+											<h5 class='project-title'>{$project->post_title}</h5>
+											<hr>
+											<h5 class='project-category'>{$project_post_category_string}</h5>
+										</div>
+									</a>
+								</div>";
+
+							echo $project_grid_tile_html;
+						echo "</div>";
+				if ( $project_count%$num_projects_row_medium==($num_projects_row_medium-1) ) {
+					echo "</div><!--End .row-->";
+				}
+			}
+		echo "</section>";
 	?>
 
 	<section class="summary-text">
