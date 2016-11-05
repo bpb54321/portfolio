@@ -1,9 +1,9 @@
 .project-gallery {
-	.row {
-		margin-bottom: rem-calc(60); 
-	}
 	@include breakpoint(medium) {
 		//padding-bottom: 5%;
+	}
+	.project-thumbnail-container {
+		margin-bottom: rem-calc(60);
 	}
 	.project-thumbnail {
 		background-size: cover;
@@ -11,8 +11,7 @@
 		padding-bottom: 66%;
 		position: relative;
 		background-position: center center;
-	}
-
+	}	
 }
 .project-thumbnail-overlay {
 	color: black;

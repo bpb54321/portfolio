@@ -44,10 +44,6 @@
 		<?php the_content(); ?>
 	</section>
 
-	<div class="row">
-		<div class="columns large-6">This is the left section.</div>
-		<div class="columns large-6">This is the right section.</div>
-	</div>
 	<?php get_template_part( 'parts/footer', 'cta' ); ?>
 
 <?php endwhile; else : ?>

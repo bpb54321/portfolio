@@ -4455,7 +4455,7 @@ header::after {
       display: block;
       text-transform: uppercase; }
 
-.project-gallery .row {
+.project-gallery .project-thumbnail-container {
   margin-bottom: 3.75rem; }
 
 .project-gallery .project-thumbnail {
