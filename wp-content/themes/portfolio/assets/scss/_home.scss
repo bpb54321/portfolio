@@ -3,9 +3,7 @@
 		//padding-bottom: 5%;
 	}
 
-	.project-thumbnail-container {
-		margin-bottom: rem-calc(60);
-	}
+	.project-thumbnail-container {}
 
 	.project-thumbnail {
 		background-size: cover;
@@ -13,53 +11,18 @@
 		padding-bottom: 66%;
 		position: relative;
 		background-position: center center;
+		margin-bottom: 1rem;
 	}
 }
 
-.project-thumbnail-overlay {
-	color: black;
-	position: absolute;
-	background-color: rgba($secondary-color, .5);
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	opacity: 0; //Starts off invisible
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	hr {
-		height: auto;
-		width: 5%;
-		border-color: black;
-		@media ( min-width: 640px ) and (max-width: 900px ) {
-			margin: 0;
-		}
-	}
-
-	.project-title {
-		font-weight: 600;
-		font-size: 30px;
-		@media (min-width: 640px ) and (max-width: 900px ) {
-			font-size: 24px;
-		}
-		line-height: 1;
-		text-align: center;
-	}
-
-	.project-category {
-		font-weight: 300;
-		font-size: 28px;
-		@media ( min-width: 640px ) and (max-width: 900px ) {
-			font-size: 20px;
-		}
-		//@media ( min-width: 640px ) and (max-width: 900px ) {
-		//	font-size: 24px;
-		//}
-		text-align: center;
-	}
+.project-title {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1;
+	text-align: center;
+	text-transform: uppercase;
+	max-width: 200px;
+	margin: 0 auto 2rem;
 }
 //Wide Image Links Section
 

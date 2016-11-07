@@ -50,7 +50,7 @@
 							<h5 class='project-title'><?=$project->post_title?></h5>
 						</div>
 				<?php if ( $project_count%$num_projects_row_medium == ($num_projects_row_medium-1) ) : ?>
-					</div><!--End .row-->;
+					</div><!--End .row-->
 				<?php endif; ?>
 			<?php endfor; ?>
 		</section>
