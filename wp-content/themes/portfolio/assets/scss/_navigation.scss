@@ -11,28 +11,42 @@ header::after {
 	display: block;
 	clear: both;
 }
+
 #site-title {
 	float: left;
 	font-size: rem-calc(28);
-  font-weight: bold;
+	font-weight: bold;
 	text-transform: uppercase;
+	color: $site-title-color;
 }
+
 #menu-primary-navigation {
 	float: right;
 	margin: 0;
 	position: absolute;
-  right: map-get($grid-column-gutter, small)/2; //Column gutter values from Foundation _settings.scss
+	right: map-get($grid-column-gutter, small)/2; //Column gutter values from Foundation _settings.scss
 	@include breakpoint (medium) {
 		right: map-get($grid-column-gutter, medium)/2;
 	}
-  top: 50%;
-  transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
+
 	li {
 		display: inline-block;
-		padding: 0 .5em;
+		padding: 0 0.5em;
+
 		a {
 			display: block;
 			text-transform: uppercase;
+			color: $menu-link-gray;
+
+			&:hover {
+				color: $menu-link-hover-color;
+			}
+
+			&.active-link {
+				color: $menu-link-hover-color;
+			}
 		}
 	}
 }

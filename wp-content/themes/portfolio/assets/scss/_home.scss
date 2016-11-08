@@ -3,8 +3,6 @@
 		//padding-bottom: 5%;
 	}
 
-	.project-thumbnail-container {}
-
 	.project-thumbnail {
 		background-size: cover;
 		width: 100%;
@@ -19,128 +17,15 @@
 			opacity: 0.5;
 		}
 	}
-}
 
-.project-title {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1;
-	text-align: center;
-	text-transform: uppercase;
-	max-width: 200px;
-	margin: 0 auto 2rem;
-}
-//Wide Image Links Section
-
-.image-link-container {
-	//height: 300px;
-	width: 100%;
-	padding-bottom: 66%; //To ensure 3:2 aspect ratio.
-	background-position: center center;
-	background-size: cover;
-	position: relative;
-}
-
-.image-link-overlay {
-	position: absolute;
-	//background-color: rgba($image-overlay-bg-color, .5);
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.il-overlay-text-container {
-	background-color: rgba(255,255,255,0.7);
-	@media (min-width: 640px) {
-		height: 124px;
-	}
-}
-
-%image-link-overlay-text-styles {
-	margin: 0;
-	line-height: 1;
-	color: $secondary-color;
-	text-align: center;
-	box-sizing: border-box;
-	width: 100%;
-	@media (min-width: 430px) and (max-width: 639px) {
-		width: 400px;
-		max-width: 100%;
-	}
-	@media (min-width: 900px ) {
-		width: 400px;
-	}
-}
-
-.image-link-title {
-	font-weight: 600;
-	font-size: 24px;
-	@media (min-width: 1100px) {
-		font-size: 30px;
-	}
-	padding: 1rem 1rem 0.5rem;
-	@extend %image-link-overlay-text-styles;
-}
-
-.image-link-subheader {
-	font-size: 16px;
-	padding: 0 1rem 0.5rem;
-	@extend %image-link-overlay-text-styles;
-}
-
-.call-to-action {
-	background-color: $secondary-color;
-	padding-bottom: 2em;
-	padding-top: 2em;
-	@include breakpoint(medium) {
-		padding-left: 15%;
-		padding-right: 15%;
-	}
-
-	h6 {
-		width: 55%;
-		min-width: 200px;
-		margin-left: auto;
-		margin-right: auto;
-		font-weight: $light-weight;
-		font-size: 24px;
+	.project-title {
+		color: $project-thumbnail-title-color;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1;
 		text-align: center;
-	}
-
-	.cta-button {
-		//Specific styles to the cat-button in the footer call-to-action
-		margin-left: auto;
-		margin-right: auto;
-		font-size: 18px;
-	}
-	@include breakpoint(medium) {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		$cta-block-horz-margin: 5%;
-
-		h6 {
-			width: auto;
-			margin-left: 0;
-			margin-right: 0;
-			//padding-right: 10%;
-			font-weight: $light-weight;
-			font-size: 36px;
-			margin-right: 10%;
-		}
-
-		.cta-button {
-			margin-left: 0;
-			margin-right: 0;
-			//min-width: 350px;
-			min-width: 250px;
-			//font-size: 1em;
-		}
+		text-transform: uppercase;
+		max-width: 200px;
+		margin: 0 auto 2rem;
 	}
 }
