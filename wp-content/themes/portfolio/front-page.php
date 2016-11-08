@@ -46,8 +46,8 @@
 							<a href='<?=$project_permalink?>'>
 								<div class='project-thumbnail project-thumbnail-<?=$project_count?>' style='background-image: url( <?=$image_src_string?> )'>
 							  </div>
+								<h5 class='project-title'><?=$project->post_title?></h5>
 						  </a>
-							<h5 class='project-title'><?=$project->post_title?></h5>
 						</div>
 				<?php if ( $project_count%$num_projects_row_medium == ($num_projects_row_medium-1) ) : ?>
 					</div><!--End .row-->
