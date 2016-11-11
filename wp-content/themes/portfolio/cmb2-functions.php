@@ -67,96 +67,14 @@ function cmb2_before_row_if_2( $field_args, $field ) {
 	}
 }
 
-add_action( 'cmb2_admin_init', 'register_about_page_template_metaboxes' );
-function register_about_page_template_metaboxes()
-{
-    $prefix = 'about_page_';
-    $about_page_metabox = new_cmb2_box( array(
-        'id'            => $prefix . 'metabox',
-        'title'         => __( 'About Page Employee List Settings', 'cmb2' ),
-        'object_types'  => array( 'page', ), // Post type
-        // 'show_on_cb' => 'cmb2_show_if_front_page', // function should return a bool value
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'show_names' => true, // Show field names on the left
-        'show_on'      => array( 'key' => 'page-template', 'value' => 'page-about.php' ), //Templates to show on
-        // 'cmb_styles' => false, // false to disable the CMB stylesheet
-        // 'closed'     => true, // true to keep the metabox closed by default
-    ) );
 
-    $employee_group_field = $about_page_metabox->add_field( array(
-        'id'          => $prefix . 'employee_group',
-        'type'        => 'group',
-        'description' => __( 'An employee', 'cmb2' ),
-        'options'     => array(
-            'group_title'   => __( 'Employee {#}', 'cmb2' ), // {#} gets replaced by row number
-            'add_button'    => __( 'Add Another Employee', 'cmb2' ),
-            'remove_button' => __( 'Remove Employee', 'cmb2' ),
-            'sortable'      => true, // beta
-            // 'closed'     => true, // true to have the groups closed by default
-        ),
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name'       => __( 'Employee Name', 'cmb2' ),
-        'desc'       => __( '', 'cmb2' ),
-        'id'         => 'name',
-        'type'       => 'text',
-        //'default' => '',
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name'       => __( 'Employee Title', 'cmb2' ),
-        'desc'       => __( '', 'cmb2' ),
-        'id'         => 'title',
-        'type'       => 'text',
-        //'default' => '',
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name'       => __( 'Employee Bio/Summary', 'cmb2' ),
-        'desc'       => __( '', 'cmb2' ),
-        'id'         => 'bio',
-        'type'       => 'textarea',
-        //'default' => '',
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name'       => __( 'Employee Email', 'cmb2' ),
-        'desc'       => __( '', 'cmb2' ),
-        'id'         => 'email',
-        'type'       => 'text',
-        //'default' => '',
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name'       => __( 'Employee Phone', 'cmb2' ),
-        'desc'       => __( '', 'cmb2' ),
-        'id'         => 'phone',
-        'type'       => 'text',
-        //'default' => '',
-    ) );
-
-    $about_page_metabox->add_group_field( $employee_group_field, array(
-        'name' => __( 'Employee Thumbnail Photo', 'cmb2' ),
-        'desc' => __( 'Select or upload a photo.', 'cmb2' ),
-        'id'   => 'photo',
-        'type' => 'file',
-    ) );
-}
-
-add_action( 'cmb2_admin_init', 'cmb2_register_page_metaboxes' );
-/**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
- */
-function cmb2_register_page_metaboxes() {
-	
-//--------------------------------File Upload/Link to File Metabox--------------------//
-	$prefix = 'link_to_file_';
-	$link_to_file_metabox = new_cmb2_box( array(
+add_action( 'cmb2_admin_init', 'cmb2_register_project_metaboxes' );
+function cmb2_register_project_metaboxes() {
+	$prefix = 'project_details_';
+	$project_details_metabox = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Link to Media File (for uploading a brochure, etc)', 'cmb2' ),
-		'object_types'  => array( 'project', 'page' ), // Post type
+		'title'         => __( 'Details for the Project', 'cmb2' ),
+		'object_types'  => array( 'project' ), // Post type
 		// 'show_on_cb' => 'cmb2_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
@@ -164,58 +82,19 @@ function cmb2_register_page_metaboxes() {
 		// 'cmb_styles' => false, // false to disable the CMB stylesheet
 		// 'closed'     => true, // true to keep the metabox closed by default
 	) );
-
-	$link_group = $link_to_file_metabox->add_field( array(
-		'id'          => $prefix . 'link_group',
-		'type'        => 'group',
-		'description' => __( 'A link for a brochure, etc.', 'cmb2' ),
-		'options'     => array(
-			'group_title'   => __( 'Link {#}', 'cmb2' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another Link', 'cmb2' ),
-			'remove_button' => __( 'Remove Link', 'cmb2' ),
-			'sortable'      => true, // beta
-			// 'closed'     => true, // true to have the groups closed by default
-		),
+	$project_details_metabox->add_field( array(
+		'name' => __( 'Project URL', 'cmb2' ),
+		'desc' => __( 'The project URL.', 'cmb2' ),
+		'id'   => $prefix . 'url',
+		'type' => 'text_url',
+		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+		// 'repeatable' => true,
 	) );
+}
 
-	$link_to_file_metabox->add_group_field( $link_group, array(
-		'name'       => __( 'Link Text', 'cmb2' ),
-		'desc'       => __( 'The text for link.', 'cmb2' ),
-		'id'         => $prefix . 'text',
-		'type'       => 'text',
-		//'default' => 'Brochure {#}',
-	) );
+add_action( 'cmb2_admin_init', 'cmb2_register_front_page_metaboxes' );
+function cmb2_register_front_page_metaboxes() {
 
-	$link_to_file_metabox->add_group_field( $link_group, array(
-		'name' => __( 'Media File Upload', 'cmb2' ),
-		'desc' => __( 'Select or upload a media file.', 'cmb2' ),
-		'id'   => $prefix . 'media_file',
-		'type' => 'file',
-	) );
-
-
-//--------------------------------Front Page Top CTA Button--------------------//
-	$prefix = 'front_page_top_cta_button_';
-	$front_page_image_links_metabox = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Front Page Top CTA Button', 'cmb2' ),
-		'object_types'  => array( 'page', ), // Post type
-		'show_on_cb' => 'cmb2_show_if_front_page', // function should return a bool value
-		// 'context'    => 'normal',
-		// 'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		'closed'     => false, // true to keep the metabox closed by default
-	) );
-
-	$front_page_image_links_metabox->add_field( array(
-		'name'             => __( 'Button Text', 'cmb2' ),
-		'desc'             => __( 'The text in the button.', 'cmb2' ),
-		'id'               => $prefix . 'text',
-		'type'             => 'text_small',
-	) );
-//-------------------------------------------------------------------------//
-//--------------------------------Front Page Project Grid Num Columns--------------------//
 	$prefix = 'front_page_project_grid_num_columns_';
 	$front_page_project_grid_num_columns_metabox = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
@@ -240,109 +119,6 @@ function cmb2_register_page_metaboxes() {
 								'2' => '2',
 								],
 	) );
-//-------------------------------------------------------------------------//
-//--------------------------------Repeatable Front Page Image Links--------------------//
-	$prefix = 'front_page_image_links_';
-	$front_page_image_links_metabox = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Front Page Image Links', 'cmb2' ),
-		'object_types'  => array( 'page', ), // Post type
-		'show_on_cb' => 'cmb2_show_if_front_page', // function should return a bool value
-		// 'context'    => 'normal',
-		// 'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		'closed'     => false, // true to keep the metabox closed by default
-	) );
-
-	$front_page_image_links_metabox->add_field( array(
-		'name'             => __( 'Number of Columns Per Row for Image Link Grid', 'cmb2' ),
-		'desc'             => __( 'Select the number of columns per row for the image link grid on the home page.', 'cmb2' ),
-		'id'               => $prefix . 'num_columns',
-		'type'             => 'select',
-		'show_option_none' => false,
-		'options'          => [
-								'2' => '2',
-								'3' => '3',
-								],
-	) );
-
-	$pages_array = create_pages_array();
-
-
-
-	//error_log('-----------------$pages_array------------------');
-	//error_log( print_r( $pages_array,true) );
-
-	$image_link_group = $front_page_image_links_metabox->add_field( array(
-		'id'          => $prefix . 'image_link_group',
-		'type'        => 'group',
-		'description' => __( 'An image link to a page.', 'cmb2' ),
-		'options'     => array(
-			'group_title'   => __( 'Image Link {#}', 'cmb2' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another Image Link', 'cmb2' ),
-			'remove_button' => __( 'Remove Image Link', 'cmb2' ),
-			'sortable'      => true, // beta
-			// 'closed'     => true, // true to have the groups closed by default
-		),
-	) );
-
-	$front_page_image_links_metabox->add_group_field( $image_link_group, array(
-		'name'             => __( 'Page to Link To', 'cmb2' ),
-		'desc'             => __( 'Select a page from the site to link to.', 'cmb2' ),
-		'id'               => $prefix . 'selection',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'options'          => $pages_array,
-	) );
-
-	$front_page_image_links_metabox->add_group_field( $image_link_group, array(
-		'name' => __( 'Subheader Text', 'cmb2' ),
-		'desc' => __( 'A small paragraph that will appear under the page title.  Text will be cut off if too long.', 'cmb2' ),
-		'id'   => $prefix . 'subheader_text',
-		'type' => 'textarea',
-	) );
-
-	/*$front_page_image_links_metabox->add_field( array(
-		'name'             => __( 'Page to Link To', 'cmb2' ),
-		'desc'             => __( 'There will be an image link on the front page linking to each selected page.', 'cmb2' ),
-		'id'               => $prefix . 'selection',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'options'          => $pages_array,
-		'repeatable' 	   => true,
-	) );
-
-	$front_page_image_links_metabox->add_field( array(
-		'name'             => __( 'Subheader Text', 'cmb2' ),
-		'desc'             => __( 'A small paragraph that will appear under the page title.  Text will be cut off if too long.', 'cmb2' ),*/
-//-------------------------------------------------------------------------//
-//--------------------------------Secondary Content Editor for Front Page--------------------//
-	$prefix = 'front_page_secondary_editor_';
-	$front_page_secondary_editor = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Front Page Secondary Content Editor (content will appear below the hero image)', 'cmb2' ),
-		'object_types'  => array( 'page', ), // Post type
-		'show_on_cb' => 'cmb2_show_if_front_page', // function should return a bool value
-		// 'context'    => 'normal',
-		// 'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		'closed'     => false, // true to keep the metabox closed by default
-	) );
-
-	$front_page_secondary_editor->add_field( array(
-		'name'    => __( 'Content Editor', 'cmb2' ),
-		'desc'    => __( 'Add additional content here, which will appear below the hero image.', 'cmb2' ),
-		'id'      => $prefix . 'wysiwyg',
-		'type'    => 'wysiwyg',
-		'options' => array( 
-				'textarea_rows' => 15, 
-				'wpautop' => false, // use wpautop? Automatically adds paragraph tags
-		),
-	) );
-//-------------------------------------------------------------------------//
-
 }
 
 //add_action( 'cmb2_admin_init', 'cmb2_register_repeatable_group_field_metabox' );
@@ -580,7 +356,7 @@ function create_pages_array() {
 		//'post_parent'      => '',
 		//'author'	   => '',
 		'post_status'      => 'publish',
-		'suppress_filters' => true 
+		'suppress_filters' => true
 	);
 	$posts_array = get_posts( $args );
 
