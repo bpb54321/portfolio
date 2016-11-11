@@ -138,20 +138,34 @@ function get_post_category_string($post) {
 	}
 }
 
+/**
+ * Returns the permalink of an adjacent custom post type to a given custom post type, which occurs either immediately before or immediately after the given custom post type.
+ *
+ * @param WP_Post $post The post object representing the custom post type object that you wish to find the adjacent post to.
+ * @param string $post_type The name of the custom post type that you wish to restrict the query to.
+ * @param string $before_or_after Either the string 'before' or 'after', specifying whether you want to find the adjacent custom post type that comes before or after the $post parameter.
+ * @return return string The permalink of the adjacent post type, or '' (empty string) if one does not exist.
+ */
 function get_adjacent_custom_post_type( $post, $post_type = 'post', $before_or_after = 'before' ) {
+
 	$post_last_modified_date = $post->post_date;
-	error_log('-----------------------------------$post_last_modified_date----------------------------------------');
-	error_log( print_r($post_last_modified_date, true) );
-	error_log('-----------------------------------$post_last_modified_date----------------------------------------');
+
+	$before_or_after = ($before_or_after === 'before' ) ? 'before' : 'after';
+	$order_direction = ($before_or_after === 'before' ) ? 'DESC' : 'ASC';
 
 	$args = [
 		'date_query' => [
 			[ $before_or_after => $post_last_modified_date ]
 		],
 		'post_type' => $post_type,
+		'order'                  => $order_direction,
+		'orderby'                => 'date',
 	];
+
 	$adjacent_posts_query = new WP_Query( $args );
+
 	$adjacent_posts = $adjacent_posts_query->posts;
+
 	if ( count( $adjacent_posts) > 0 ) {
 		$adjacent_post = $adjacent_posts[0];
 		$adjacent_post_id = $adjacent_post->ID;
@@ -159,9 +173,6 @@ function get_adjacent_custom_post_type( $post, $post_type = 'post', $before_or_a
 	} else {
 		$adjacent_post_permalink = '';
 	}
-	error_log('-----------------------------------$adjacent_post_permalink----------------------------------------');
-	error_log( print_r($adjacent_post_permalink, true) );
-	error_log('-----------------------------------$adjacent_post_permalink----------------------------------------');
 
 	return $adjacent_post_permalink;
 }

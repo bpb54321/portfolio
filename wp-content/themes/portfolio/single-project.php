@@ -6,10 +6,13 @@
 
 	$prev_project_permalink = get_adjacent_custom_post_type( $post, 'project', 'before' );
 	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
-	error_log( print_r($prev_project_permalink, true) ); 
+	error_log( print_r($prev_project_permalink, true) );
 	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
 
-	$next_project_permalink = 'http://google.com';
+	$next_project_permalink = get_adjacent_custom_post_type( $post, 'project', 'after' );
+	error_log('-----------------------------------$next_project_permalink----------------------------------------'); 
+	error_log( print_r($next_project_permalink, true) ); 
+	error_log('-----------------------------------$next_project_permalink----------------------------------------');
 ?>
 
 <div class="row">
