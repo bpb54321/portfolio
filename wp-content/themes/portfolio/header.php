@@ -13,7 +13,7 @@
 		<meta class="foundation-mq">
 
     <!-- Web Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|PT+Sans:400,700" rel="stylesheet">
     <!-- End Web Fonts -->
 
 		<!-- Icons & Favicons -->
@@ -56,7 +56,7 @@
 				<div class="off-canvas-content" data-off-canvas-content>
 
 					<header class="header row column" role="banner">
-            
+
                <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
                <?php joints_top_nav(); ?>
 

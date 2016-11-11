@@ -2,28 +2,54 @@
 // TODO: Style the body text.
 
 .single-project {
-	.main-content {
-		margin-bottom: 3rem;
-	}
-
-	.project-title {
-		line-height: 1;
-		font-size: 24px;
-		text-transform: uppercase;
-		margin-bottom: 1rem;
-	}
-
 	a:hover {
 		text-decoration: underline;
 	}
 
+	.main-content {
+		margin-bottom: 3rem;
+
+		.project-title {
+			line-height: 1;
+			font-size: 24px;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 15px;
+			line-height: 1.8em;
+			text-transform: none;
+			text-decoration: none;
+			font-weight: 300;
+			font-style: normal;
+			margin: 0 0 1em;
+			color: $body-color;
+		}
+
+		a {
+			font-family: 'Open Sans', sans-serif;
+		}
+	}
+
+	.back-to-work {
+		color: $site-title-color;
+		font-size: 15px;
+	}
+
 	.prev-next-container {
 		float: right;
+		color: $body-color;
+		font-size: 15px;
 
 		&::after {
 			content: '';
 			display: table-cell;
 			clear: both;
 		}
+
+		.next,
+		.prev {}
 	}
 }

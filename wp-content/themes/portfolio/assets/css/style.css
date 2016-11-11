@@ -4742,20 +4742,37 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 .slick-current {
   opacity: 1; }
 
-.single-project .main-content {
-  margin-bottom: 3rem; }
-
-.single-project .project-title {
-  line-height: 1;
-  font-size: 24px;
-  text-transform: uppercase;
-  margin-bottom: 1rem; }
-
 .single-project a:hover {
   text-decoration: underline; }
 
+.single-project .main-content {
+  margin-bottom: 3rem; }
+  .single-project .main-content .project-title {
+    line-height: 1;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 1rem; }
+  .single-project .main-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.8em;
+    text-transform: none;
+    text-decoration: none;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0 0 1em;
+    color: #575757; }
+  .single-project .main-content a {
+    font-family: 'Open Sans', sans-serif; }
+
+.single-project .back-to-work {
+  color: #444444;
+  font-size: 15px; }
+
 .single-project .prev-next-container {
-  float: right; }
+  float: right;
+  color: #575757;
+  font-size: 15px; }
   .single-project .prev-next-container::after {
     content: '';
     display: table-cell;
