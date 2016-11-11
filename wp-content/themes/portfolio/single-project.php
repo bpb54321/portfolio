@@ -3,27 +3,10 @@
 	$ftd_img_id = get_post_thumbnail_id ( $post );
 	$ftd_img_srcset = wp_get_attachment_image_srcset( $ftd_img_id, $size = 'medium', $image_meta = null );
 	$project_url = get_post_meta( $post->ID, 'project_details_url', true );
-	$project_last_modified_date = $post->post_date;
-	error_log('-----------------------------------$project_last_modified_date----------------------------------------');
-	error_log( print_r($project_last_modified_date, true) );
-	error_log('-----------------------------------$project_last_modified_date----------------------------------------');
 
-	$args = [
-		'date_query' => [
-			[ 'before' => $project_last_modified_date ]
-		],
-		'post_type' => 'project',
-	];
-	$prev_projects_query = new WP_Query( $args );
-	$prev_projects = $prev_projects_query->posts;
-	if ( count( $prev_projects) > 0 ) {
-		$prev_project_id = $prev_projects[0]->ID;
-		$prev_project_permalink = get_the_permalink( $prev_project_id );
-	} else {
-		$prev_project_permalink = '';
-	}
+	$prev_project_permalink = get_adjacent_custom_post_type( $post, 'project', 'before' );
 	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
-	error_log( print_r($prev_project_permalink, true) );
+	error_log( print_r($prev_project_permalink, true) ); 
 	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
 
 	$next_project_permalink = 'http://google.com';

@@ -1,39 +1,39 @@
 <?php
 // Theme support options
-require_once(get_template_directory().'/assets/functions/theme-support.php'); 
+require_once(get_template_directory().'/assets/functions/theme-support.php');
 
 // WP Head and other cleanup functions
-require_once(get_template_directory().'/assets/functions/cleanup.php'); 
+require_once(get_template_directory().'/assets/functions/cleanup.php');
 
 // Register scripts and stylesheets
-require_once(get_template_directory().'/assets/functions/enqueue-scripts.php'); 
+require_once(get_template_directory().'/assets/functions/enqueue-scripts.php');
 
 // Register custom menus and menu walkers
-require_once(get_template_directory().'/assets/functions/menu.php'); 
+require_once(get_template_directory().'/assets/functions/menu.php');
 
 // Register sidebars/widget areas
-require_once(get_template_directory().'/assets/functions/sidebar.php'); 
+require_once(get_template_directory().'/assets/functions/sidebar.php');
 
 //Require the file that registers all theme widgets
-require_once(get_template_directory().'/assets/functions/register-widgets.php'); 
+require_once(get_template_directory().'/assets/functions/register-widgets.php');
 
 // Makes WordPress comments suck less
-require_once(get_template_directory().'/assets/functions/comments.php'); 
+require_once(get_template_directory().'/assets/functions/comments.php');
 
 // Replace 'older/newer' post links with numbered navigation
-require_once(get_template_directory().'/assets/functions/page-navi.php'); 
+require_once(get_template_directory().'/assets/functions/page-navi.php');
 
 // Adds support for multiple languages
-require_once(get_template_directory().'/assets/translation/translation.php'); 
+require_once(get_template_directory().'/assets/translation/translation.php');
 
 // Remove 4.2 Emoji Support
-// require_once(get_template_directory().'/assets/functions/disable-emoji.php'); 
+// require_once(get_template_directory().'/assets/functions/disable-emoji.php');
 
 // Adds site styles to the WordPress editor
-//require_once(get_template_directory().'/assets/functions/editor-styles.php'); 
+//require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
 // Related post function - no need to rely on plugins
-// require_once(get_template_directory().'/assets/functions/related-posts.php'); 
+// require_once(get_template_directory().'/assets/functions/related-posts.php');
 
 //Add support for Custom_Add_Meta_Box class
 require_once( get_template_directory().'/lib/classes/metaboxes/meta_box.php');
@@ -45,10 +45,10 @@ require_once(get_template_directory().'/assets/post-types/project.php');
 require_once(get_template_directory().'/assets/post-types/page.php');
 
 // Customize the WordPress login menu
-// require_once(get_template_directory().'/assets/functions/login.php'); 
+// require_once(get_template_directory().'/assets/functions/login.php');
 
 // Customize the WordPress admin
-require_once(get_template_directory().'/assets/functions/admin.php'); 
+require_once(get_template_directory().'/assets/functions/admin.php');
 
 //Create custom metaboxes using the CMB2 library
 require_once( get_template_directory() . '/cmb2-functions.php' );
@@ -59,9 +59,9 @@ require_once( get_template_directory() . '/cmb2-functions.php' );
 function get_image_widths_and_urls($id) {
 	//Get all the possible image sizes
 	$image_size_array = get_intermediate_image_sizes();
-	//error_log('--------------------$image_size_array------------------------'); 
+	//error_log('--------------------$image_size_array------------------------');
 	//error_log( var_export($image_size_array, true) );
-	
+
 	$image_width_array = [];
 	//$image_url_array = [];
 	$widths_and_urls = [];
@@ -76,8 +76,8 @@ function get_image_widths_and_urls($id) {
 				"width" => $image_width,
 				"url" => $image_url,
 			];
-			//error_log('--------------------$image_info_array------------------------'); 
-			//error_log( var_export($image_info_array, true) );	
+			//error_log('--------------------$image_info_array------------------------');
+			//error_log( var_export($image_info_array, true) );
 			$i++;
 		}
 	}
@@ -95,16 +95,16 @@ function get_image_widths_and_urls($id) {
 // @param: String $size: The Wordpress keyword for the image size (thumbnail, medium, large, full);
 // @return: String The URL of the featured image.
 function get_featured_image_src($post, $size) {
-	//error_log('--------------------$post------------------------'); 
+	//error_log('--------------------$post------------------------');
 	//error_log( var_export($post, true) );
 
 	$post_thumbnail_id = get_post_thumbnail_id ( $post );
 	$image_src_array = wp_get_attachment_image_src ( $post_thumbnail_id, $size, false );
-	//error_log('--------------------$image_src_array------------------------'); 
+	//error_log('--------------------$image_src_array------------------------');
 	//error_log( var_export($image_src_array, true) );
-	
+
 	$image_src_string = $image_src_array[0];
-	//error_log('--------------------$image_src_string------------------------'); 
+	//error_log('--------------------$image_src_string------------------------');
 	//error_log( var_export($image_src_string, true) );
 
 	return $image_src_string;
@@ -114,11 +114,11 @@ function get_featured_image_src($post, $size) {
 // @param: WP_Post $post: The post object that you are getting the categories for
 // @return: String The comma-connected string of the post's categories.
 function get_post_category_string($post) {
-	$category_object_array = get_the_category($post); 
-	//error_log('--------------------$category_object_array------------------------'); 
+	$category_object_array = get_the_category($post);
+	//error_log('--------------------$category_object_array------------------------');
 	//error_log( var_export($category_object_array, true) );
 
-	//error_log('--------------------sizeof($category_object_array)------------------------'); 
+	//error_log('--------------------sizeof($category_object_array)------------------------');
 	//error_log( var_export( sizeof($category_object_array), true ) );
 
 	if ( sizeof($category_object_array) == 0 )  {
@@ -129,7 +129,7 @@ function get_post_category_string($post) {
 		foreach ($category_object_array as $category_object) {
 			$category_text_array[] = $category_object->cat_name;
 		}
-		//error_log('--------------------$category_text_array------------------------'); 
+		//error_log('--------------------$category_text_array------------------------');
 		//error_log( var_export($category_text_array, true) );
 
 		$category_text_string = join( ", ", $category_text_array );
@@ -138,4 +138,30 @@ function get_post_category_string($post) {
 	}
 }
 
+function get_adjacent_custom_post_type( $post, $post_type = 'post', $before_or_after = 'before' ) {
+	$post_last_modified_date = $post->post_date;
+	error_log('-----------------------------------$post_last_modified_date----------------------------------------');
+	error_log( print_r($post_last_modified_date, true) );
+	error_log('-----------------------------------$post_last_modified_date----------------------------------------');
 
+	$args = [
+		'date_query' => [
+			[ $before_or_after => $post_last_modified_date ]
+		],
+		'post_type' => $post_type,
+	];
+	$adjacent_posts_query = new WP_Query( $args );
+	$adjacent_posts = $adjacent_posts_query->posts;
+	if ( count( $adjacent_posts) > 0 ) {
+		$adjacent_post = $adjacent_posts[0];
+		$adjacent_post_id = $adjacent_post->ID;
+		$adjacent_post_permalink = get_the_permalink( $adjacent_post_id );
+	} else {
+		$adjacent_post_permalink = '';
+	}
+	error_log('-----------------------------------$adjacent_post_permalink----------------------------------------');
+	error_log( print_r($adjacent_post_permalink, true) );
+	error_log('-----------------------------------$adjacent_post_permalink----------------------------------------');
+
+	return $adjacent_post_permalink;
+}
