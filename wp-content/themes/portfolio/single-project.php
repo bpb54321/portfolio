@@ -12,7 +12,9 @@
 	<div class="large-4 columns">
 		<div class="single-project-copy">
 			<h1 class="project-title"><?php echo $post->post_title; ?></h1>
-			<p class="project-description"><?php echo $post->post_content; ?></p>
+			<p class="type-of-project"><span class="bullet-point">Solo Project or Collaboration:</span> Solo </p>
+			<p class="percent-developed"><span class="bullet-point">My Contributions To The Project:</span> </p>
+			<p class="features-of-note"><span class="bullet-point">Features of Note:</span> <?php echo $post->post_content; ?></p>
 			<a href="<?=$project_url?>">View Site</a>
 		</div>
 	</div>

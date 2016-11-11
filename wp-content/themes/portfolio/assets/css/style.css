@@ -4742,39 +4742,17 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 .slick-current {
   opacity: 1; }
 
-.main-article {
-  padding: 5% 1em;
-  font-weight: 300; }
-  @media screen and (min-width: 40em) {
-    .main-article {
-      padding: 5% 15%; } }
-
-h3.title {
-  color: #575757;
-  font-weight: 300;
-  font-size: 48px;
-  line-height: 1.2;
-  /* margin-top: 2em; */
-  margin-bottom: .25em;
-  margin-left: 0;
-  margin-right: 0; }
-
-.categories {
-  margin-bottom: 1em;
-  font-weight: 300; }
-  .categories h3.single-project-category-string {
-    font-weight: inherit; }
-  .categories h3.single-project-year-string {
-    font-weight: inherit;
-    font-size: 20px; }
-
-.link-to-file {
-  color: #575757;
-  display: block;
+.single-project .project-title {
+  line-height: 1;
+  font-size: 24px;
+  text-transform: uppercase;
   margin-bottom: 1rem; }
-  .link-to-file a {
-    padding-right: .5em;
-    text-decoration: underline; }
+
+.single-project a:hover {
+  text-decoration: underline; }
+
+.single-project .bullet-point {
+  font-weight: 700; }
 
 .gform_footer input[type=submit] {
   background-color: #575757; }
