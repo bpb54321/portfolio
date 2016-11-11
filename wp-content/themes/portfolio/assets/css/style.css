@@ -4742,6 +4742,9 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 .slick-current {
   opacity: 1; }
 
+.single-project .main-content {
+  margin-bottom: 3rem; }
+
 .single-project .project-title {
   line-height: 1;
   font-size: 24px;
@@ -4750,6 +4753,13 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 
 .single-project a:hover {
   text-decoration: underline; }
+
+.single-project .prev-next-container {
+  float: right; }
+  .single-project .prev-next-container::after {
+    content: '';
+    display: table-cell;
+    clear: both; }
 
 .gform_footer input[type=submit] {
   background-color: #575757; }

@@ -8,7 +8,7 @@
 	$next_project_permalink = get_adjacent_custom_post_type( $post, 'project', 'after' );
 
 ?>
-<div class="row">
+<div class="row main-content">
 	<div class="large-8 columns">
 		<img srcset="<?=$ftd_img_srcset?>" sizes="(max-width: 1024px) 100vw, 75vw" alt="Project Featured Image">
 	</div>
@@ -27,6 +27,9 @@
 		<div class="prev-next-container">
 			<?php if( $prev_project_permalink !== '' ) : ?>
 				<a href="<?=$prev_project_permalink?>" class="prev">prev</a>
+			<?php endif; ?>
+			<?php if ( ( $prev_project_permalink !== '' ) && ( $next_project_permalink !== '' ) ) : ?>
+				/
 			<?php endif; ?>
 			<?php if( $next_project_permalink !== '' ) : ?>
 				<a href="<?=$next_project_permalink?>" class="next">next</a>

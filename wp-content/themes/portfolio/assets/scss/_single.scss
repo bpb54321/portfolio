@@ -2,6 +2,10 @@
 // TODO: Style the body text.
 
 .single-project {
+	.main-content {
+		margin-bottom: 3rem;
+	}
+
 	.project-title {
 		line-height: 1;
 		font-size: 24px;
@@ -11,5 +15,15 @@
 
 	a:hover {
 		text-decoration: underline;
+	}
+
+	.prev-next-container {
+		float: right;
+
+		&::after {
+			content: '';
+			display: table-cell;
+			clear: both;
+		}
 	}
 }
