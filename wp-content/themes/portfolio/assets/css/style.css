@@ -4483,6 +4483,12 @@ header::after {
   max-width: 200px;
   margin: 0 auto 2rem; }
 
+footer p {
+  padding: 75px 0;
+  color: #999999; }
+  footer p .bold {
+    color: #111111; }
+
 /* Slider */
 .slick-slider {
   position: relative;
