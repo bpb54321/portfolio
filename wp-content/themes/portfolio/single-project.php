@@ -3,7 +3,31 @@
 	$ftd_img_id = get_post_thumbnail_id ( $post );
 	$ftd_img_srcset = wp_get_attachment_image_srcset( $ftd_img_id, $size = 'medium', $image_meta = null );
 	$project_url = get_post_meta( $post->ID, 'project_details_url', true );
- ?>
+	$project_last_modified_date = $post->post_date;
+	error_log('-----------------------------------$project_last_modified_date----------------------------------------');
+	error_log( print_r($project_last_modified_date, true) );
+	error_log('-----------------------------------$project_last_modified_date----------------------------------------');
+
+	$args = [
+		'date_query' => [
+			[ 'before' => $project_last_modified_date ]
+		],
+		'post_type' => 'project',
+	];
+	$prev_projects_query = new WP_Query( $args );
+	$prev_projects = $prev_projects_query->posts;
+	if ( count( $prev_projects) > 0 ) {
+		$prev_project_id = $prev_projects[0]->ID;
+		$prev_project_permalink = get_the_permalink( $prev_project_id );
+	} else {
+		$prev_project_permalink = '';
+	}
+	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
+	error_log( print_r($prev_project_permalink, true) );
+	error_log('-----------------------------------$prev_project_permalink----------------------------------------');
+
+	$next_project_permalink = 'http://google.com';
+?>
 
 <div class="row">
 	<div class="large-8 columns">
@@ -12,14 +36,24 @@
 	<div class="large-4 columns">
 		<div class="single-project-copy">
 			<h1 class="project-title"><?php echo $post->post_title; ?></h1>
-			<p class="type-of-project"><span class="bullet-point">Solo Project or Collaboration:</span> Solo </p>
-			<p class="percent-developed"><span class="bullet-point">My Contributions To The Project:</span> </p>
-			<p class="features-of-note"><span class="bullet-point">Features of Note:</span> <?php echo $post->post_content; ?></p>
+			<p class="project-details"><?php echo $post->post_content; ?></p>
 			<a href="<?=$project_url?>">View Site</a>
 		</div>
 	</div>
 </div>
-
+<div class="row">
+	<div class="small-12 columns">
+		<a href="<?php echo get_bloginfo( 'url' ); ?>" class="back-to-work">Back to Work</a>
+		<div class="prev-next-container">
+			<?php if( $prev_project_permalink !== '' ) : ?>
+				<a href="<?=$prev_project_permalink?>" class="prev">prev</a>
+			<?php endif; ?>
+			<?php if( $next_project_permalink !== '' ) : ?>
+				<a href="<?=$next_project_permalink?>" class="next">next</a>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
 <?php get_template_part( 'parts/footer', 'cta' ); ?>
 
 <?php get_footer(); ?>

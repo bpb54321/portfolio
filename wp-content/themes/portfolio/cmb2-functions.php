@@ -90,6 +90,22 @@ function cmb2_register_project_metaboxes() {
 		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
 		// 'repeatable' => true,
 	) );
+
+	$project_details_metabox->add_field( array(
+		'name'             => __( 'Project Type', 'cmb2' ),
+		'desc'             => __( 'Was it solo or collaborative?', 'cmb2' ),
+		'id'               => $prefix . 'project_type',
+		'type'             => 'select',
+		'show_option_none' => false,
+		// 'options'          => array(
+		// 	'solo' => __( 'Solo', 'cmb2' ),
+		// 	'collaborative'   => __( 'Collaborative', 'cmb2' ),
+		// ),
+		'options'          => array(
+			'Collaborative',
+			'Solo',
+		),
+	) );
 }
 
 add_action( 'cmb2_admin_init', 'cmb2_register_front_page_metaboxes' );
