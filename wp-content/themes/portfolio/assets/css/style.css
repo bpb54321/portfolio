@@ -4431,21 +4431,24 @@ header::after {
   display: block;
   clear: both; }
 
-#site-title {
-  float: left;
-  font-size: 1.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #444444; }
+.title-container {
+  float: left; }
+  .title-container #site-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #444444; }
+  .title-container #site-sub-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #444444; }
 
 #menu-primary-navigation {
   float: right;
   margin: 0;
   position: absolute;
   right: 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  top: 4rem; }
   @media screen and (min-width: 40em) {
     #menu-primary-navigation {
       right: 15px; } }

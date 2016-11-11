@@ -12,12 +12,21 @@ header::after {
 	clear: both;
 }
 
-#site-title {
+.title-container {
 	float: left;
-	font-size: rem-calc(28);
-	font-weight: bold;
-	text-transform: uppercase;
-	color: $site-title-color;
+
+	#site-title {
+		font-size: rem-calc(40);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $site-title-color;
+	}
+
+	#site-sub-title {
+		font-size: rem-calc(18);
+		font-weight: 400;
+		color: $site-title-color;
+	}
 }
 
 #menu-primary-navigation {
@@ -28,8 +37,7 @@ header::after {
 	@include breakpoint (medium) {
 		right: map-get($grid-column-gutter, medium)/2;
 	}
-	top: 50%;
-	transform: translateY(-50%);
+	top: 4rem;
 
 	li {
 		display: inline-block;

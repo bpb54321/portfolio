@@ -57,7 +57,12 @@
 
 					<header class="header row column" role="banner">
 
-               <h1 id="site-title"><?php bloginfo("site_title"); ?></h1>
+               <a href="/" class="title-wrapper">
+                 <div class="title-container">
+                   <h1 id="site-title">Brian Blosser</h1>
+                   <h2 id="site-sub-title">Web Developer</h2>
+                 </div>
+               </a>
                <?php joints_top_nav(); ?>
 
 					</header> <!-- end .header -->
