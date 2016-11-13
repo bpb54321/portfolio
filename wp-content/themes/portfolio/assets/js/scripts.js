@@ -12,6 +12,12 @@ jQuery(document).ready(function() {
 });
 
 jQuery(document).foundation();
+jQuery(document).ready(function() {
+  jQuery("#mobile-menu-link").on("click", function() {
+    jQuery("#menu-primary-navigation").toggleClass("mobile-menu-revealed");
+  });
+});
+
 /* 
 These functions make sure WordPress 
 and Foundation play nice together.

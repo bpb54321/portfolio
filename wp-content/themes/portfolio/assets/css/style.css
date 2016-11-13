@@ -4420,11 +4420,15 @@ PLUGIN STYLES
   margin: 0; }
 
 header {
-  padding-top: 4rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
   margin: 0 auto;
   position: relative;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  text-align: center; }
+  @media (min-width: 640px) {
+    header {
+      padding-top: 4rem; } }
 
 header::after {
   content: '';
@@ -4432,29 +4436,59 @@ header::after {
   clear: both; }
 
 .title-container {
-  float: left; }
+  float: none;
+  text-align: center; }
+  @media (min-width: 640px) {
+    .title-container {
+      float: left; } }
   .title-container #site-title {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #444444; }
   .title-container #site-sub-title {
+    text-align: center;
     font-size: 1.125rem;
     font-weight: 400;
     color: #444444; }
+    @media (min-width: 640px) {
+      .title-container #site-sub-title {
+        text-align: left; } }
+
+#mobile-menu-link {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 25px; }
+  @media (min-width: 640px) {
+    #mobile-menu-link {
+      display: none; } }
 
 #menu-primary-navigation {
-  float: right;
-  margin: 0;
-  position: absolute;
-  right: 10px;
-  top: 4rem; }
+  display: block;
+  float: none;
+  position: initial;
+  height: 0;
+  overflow: hidden;
+  transition: height 1s;
+  margin: 0; }
+  #menu-primary-navigation.mobile-menu-revealed {
+    height: 120px; }
   @media screen and (min-width: 40em) {
     #menu-primary-navigation {
-      right: 15px; } }
+      display: block;
+      right: 15px;
+      float: right;
+      position: absolute;
+      top: 4rem;
+      height: auto; } }
   #menu-primary-navigation li {
-    display: inline-block;
-    padding: 0 0.5em; }
+    padding: 0 0.5em;
+    display: block;
+    margin-bottom: 15px; }
+    @media screen and (min-width: 40em) {
+      #menu-primary-navigation li {
+        display: inline-block;
+        margin-bottom: 0; } }
     #menu-primary-navigation li a {
       display: block;
       text-transform: uppercase;

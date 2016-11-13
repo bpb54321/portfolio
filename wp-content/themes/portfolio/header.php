@@ -57,13 +57,15 @@
 
 					<header class="header row column" role="banner">
 
+              <?php joints_top_nav(); ?>
+               <a id="mobile-menu-link">Menu</a>
                <a href="/" class="title-wrapper">
                  <div class="title-container">
                    <h1 id="site-title">Brian Blosser</h1>
                    <h2 id="site-sub-title">Web Developer</h2>
                  </div>
                </a>
-               <a href="" id="mobile-menu-link">Menu</a>
-               <?php joints_top_nav(); ?>
+
+
 
 					</header> <!-- end .header -->

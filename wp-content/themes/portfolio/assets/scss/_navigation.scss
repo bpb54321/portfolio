@@ -1,9 +1,13 @@
 header {
-	padding-top: 4rem;
+	padding-top: 1rem;
+	@media ( min-width: map-get($breakpoints, medium) ) {
+		padding-top: 4rem;
+	}
 	padding-bottom: 4rem;
 	margin: 0 auto;
 	position: relative;
 	letter-spacing: 1px;
+	text-align: center;
 }
 
 header::after {
@@ -13,7 +17,11 @@ header::after {
 }
 
 .title-container {
-	float: left;
+	float: none;
+	text-align: center;
+	@media ( min-width: map-get($breakpoints, medium) ) {
+		float: left;
+	}
 
 	#site-title {
 		font-size: rem-calc(40);
@@ -23,25 +31,54 @@ header::after {
 	}
 
 	#site-sub-title {
+		text-align: center;
+		@media ( min-width: map-get($breakpoints, medium) ) {
+			text-align: left;
+		}
 		font-size: rem-calc(18);
 		font-weight: 400;
 		color: $site-title-color;
 	}
 }
 
-#menu-primary-navigation {
-	float: right;
-	margin: 0;
-	position: absolute;
-	right: map-get($grid-column-gutter, small)/2; //Column gutter values from Foundation _settings.scss
-	@include breakpoint (medium) {
-		right: map-get($grid-column-gutter, medium)/2;
+#mobile-menu-link {
+	text-transform: uppercase;
+	display: inline-block;
+	@media ( min-width: map-get($breakpoints,medium) ) {
+		display: none;
 	}
-	top: 4rem;
+	margin-bottom: 25px;
+}
+
+#menu-primary-navigation {
+	display: block;
+	float: none;
+	position: initial;
+	height: 0;
+
+	&.mobile-menu-revealed {
+		height: 120px; //Used to review and hide the mobile menu
+	}
+	overflow: hidden;
+	transition: height 1s;
+	@include breakpoint (medium) {
+		display: block;
+		right: map-get($grid-column-gutter, medium)/2;
+		float: right;
+		position: absolute;
+		top: 4rem;
+		height: auto;
+	}
+	margin: 0;
 
 	li {
-		display: inline-block;
 		padding: 0 0.5em;
+		display: block;
+		margin-bottom: 15px;
+		@include breakpoint (medium) {
+			display: inline-block;
+			margin-bottom: 0;
+		}
 
 		a {
 			display: block;
