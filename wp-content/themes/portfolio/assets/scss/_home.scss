@@ -1,6 +1,10 @@
 .project-gallery {
-	@include breakpoint(medium) {
-		//padding-bottom: 5%;
+	.project-thumbnail-container {
+		@media ( max-width: map-get($breakpoints,medium) ) {
+			max-width: 450px;
+			margin: 0 auto;
+			float: none !important;
+		}
 	}
 
 	.project-thumbnail {

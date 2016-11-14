@@ -4501,6 +4501,12 @@ header::after {
       #menu-primary-navigation li a.active-link {
         color: #111111; }
 
+@media (max-width: 640px) {
+  .project-gallery .project-thumbnail-container {
+    max-width: 450px;
+    margin: 0 auto;
+    float: none !important; } }
+
 .project-gallery .project-thumbnail {
   background-size: cover;
   width: 100%;
