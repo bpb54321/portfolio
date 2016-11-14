@@ -1,5 +1,9 @@
 footer {
     p {
+        text-align: center;
+        @media ( min-width:map-get($breakpoints,medium) ) {
+            text-align: left;
+        }
         padding: 75px 0;
         color: $menu-link-gray;
 
