@@ -17,7 +17,7 @@
     <!-- End Web Fonts -->
 
 		<!-- Icons & Favicons -->
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<!-- <link rel="icon" href="<?php //echo get_template_directory_uri(); ?>/favicon.ico"> -->
 		<!--<link href="<?php //echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" /> -->
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
