@@ -1,15 +1,17 @@
 .gform_footer input[type=submit] {
     background-color: $primary-color;
 }
+@media ( max-width: map-get($breakpoints,medium) ) {
+    div.ginput_container_name span {
+        padding-right: 0;
+    }
 
-.google-map {
-	text-align: center;
-	pointer-events:none;
-	@include breakpoint(medium) {
-		pointer-events: auto;
-	}
-}
+    div.ginput_complex.ginput_container.gf_name_has_2 span {
+        width: 100%;
+    }
 
-div.reveal { //Reveal modal padding
-	padding: 2rem;
+    .gform_wrapper .top_label input.medium {
+        //Email field
+        width: 75%;
+    }
 }

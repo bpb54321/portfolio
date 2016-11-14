@@ -4846,15 +4846,13 @@ a:hover {
 .gform_footer input[type=submit] {
   background-color: #575757; }
 
-.google-map {
-  text-align: center;
-  pointer-events: none; }
-  @media screen and (min-width: 40em) {
-    .google-map {
-      pointer-events: auto; } }
-
-div.reveal {
-  padding: 2rem; }
+@media (max-width: 640px) {
+  div.ginput_container_name span {
+    padding-right: 0; }
+  div.ginput_complex.ginput_container.gf_name_has_2 span {
+    width: 100%; }
+  .gform_wrapper .top_label input.medium {
+    width: 75%; } }
 
 .employee-thumbnail {
   display: block;
