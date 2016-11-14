@@ -4795,17 +4795,17 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 .slick-current {
   opacity: 1; }
 
-.single-project a:hover {
+a:hover {
   text-decoration: underline; }
 
-.single-project .main-content {
+.main-content {
   margin-bottom: 3rem; }
-  .single-project .main-content .project-title {
+  .main-content .project-title {
     line-height: 1;
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 1rem; }
-  .single-project .main-content p {
+  .main-content p {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     line-height: 1.8em;
@@ -4815,30 +4815,30 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
     font-style: normal;
     margin: 0 0 1em;
     color: #575757; }
-  .single-project .main-content a {
+  .main-content a {
     font-family: 'Open Sans', sans-serif; }
-  .single-project .main-content #visit-site-external-link {
+  .main-content #visit-site-external-link {
     display: inline-block;
     margin-bottom: 1rem; }
-  .single-project .main-content img {
+  .main-content img {
     width: 100%;
     max-width: 350px;
     height: auto;
     margin: 0 auto;
     display: block; }
     @media (min-width: 1024px) {
-      .single-project .main-content img {
+      .main-content img {
         max-width: 100%; } }
 
-.single-project .back-to-work {
+.back-to-work {
   color: #444444;
   font-size: 15px; }
 
-.single-project .prev-next-container {
+.prev-next-container {
   float: right;
   color: #575757;
   font-size: 15px; }
-  .single-project .prev-next-container::after {
+  .prev-next-container::after {
     content: '';
     display: table-cell;
     clear: both; }
