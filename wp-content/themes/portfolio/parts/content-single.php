@@ -12,7 +12,9 @@
 		<div class="single-project-copy">
 			<h1 class="project-title"><?php echo $post->post_title; ?></h1>
 			<p class="project-details"><?php echo $post->post_content; ?></p>
-			<a target="_blank" href="<?=$project_url?>">View Site</a>
+      <?php if ( !empty($project_url) ): ?>
+        <a target="_blank" href="<?=$project_url?>">View Site</a>
+      <?php endif; ?>
 		</div>
 	</div>
 </div>
