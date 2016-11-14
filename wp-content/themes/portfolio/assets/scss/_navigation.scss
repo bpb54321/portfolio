@@ -58,9 +58,11 @@ header::after {
 
 	&.mobile-menu-revealed {
 		height: 120px; //Used to review and hide the mobile menu
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 15px;
 	}
 	overflow: hidden;
-	transition: height 1s;
+	transition: height 0.5s;
 	@include breakpoint (medium) {
 		display: block;
 		right: map-get($grid-column-gutter, medium)/2;

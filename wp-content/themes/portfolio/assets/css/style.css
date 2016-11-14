@@ -4469,10 +4469,12 @@ header::after {
   position: initial;
   height: 0;
   overflow: hidden;
-  transition: height 1s;
+  transition: height .5s;
   margin: 0; }
   #menu-primary-navigation.mobile-menu-revealed {
-    height: 120px; }
+    height: 120px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px; }
   @media screen and (min-width: 40em) {
     #menu-primary-navigation {
       display: block;
