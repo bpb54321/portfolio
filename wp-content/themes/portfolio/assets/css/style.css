@@ -1040,12 +1040,12 @@ button {
     padding-left: 0;
     padding-right: 0; }
   .row .row {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem; }
+    margin-left: -1.25rem;
+    margin-right: -1.25rem; }
     @media screen and (min-width: 40em) {
       .row .row {
-        margin-left: -0.9375rem;
-        margin-right: -0.9375rem; } }
+        margin-left: -1.875rem;
+        margin-right: -1.875rem; } }
     .row .row.collapse {
       margin-left: 0;
       margin-right: 0; }
@@ -1058,12 +1058,12 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
   @media screen and (min-width: 40em) {
     .column, .columns {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 1.875rem;
+      padding-right: 1.875rem; } }
   .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
@@ -1326,8 +1326,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
 
 .small-centered {
   float: none;
@@ -1536,8 +1536,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .medium-uncollapse > .column, .medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; }
   .medium-centered {
     float: none;
     margin-left: auto;
@@ -1744,8 +1744,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .large-uncollapse > .column, .large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; }
   .large-centered {
     float: none;
     margin-left: auto;
@@ -4479,7 +4479,7 @@ header::after {
   @media screen and (min-width: 40em) {
     #menu-primary-navigation {
       display: block;
-      right: 15px;
+      right: 30px;
       float: right;
       position: absolute;
       top: 4rem;
@@ -4817,6 +4817,15 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
     color: #575757; }
   .single-project .main-content a {
     font-family: 'Open Sans', sans-serif; }
+  .single-project .main-content #visit-site-external-link {
+    display: inline-block;
+    margin-bottom: 1rem; }
+  .single-project .main-content img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto;
+    display: block; }
 
 .single-project .back-to-work {
   color: #444444;
