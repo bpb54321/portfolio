@@ -4795,7 +4795,8 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 .slick-current {
   opacity: 1; }
 
-a:hover {
+.page-about a:hover,
+.single-project a:hover {
   text-decoration: underline; }
 
 .main-content {
