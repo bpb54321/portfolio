@@ -4537,7 +4537,9 @@ header::after {
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      -webkit-animation: spinningWheel 3s infinite;
+      animation: spinningWheel 3s infinite; }
 
 .project-gallery .project-title {
   color: #404040;
@@ -4551,6 +4553,28 @@ header::after {
   @media (min-width: 475px) and (max-width: 639px) {
     .project-gallery .project-title {
       font-size: 20px; } }
+
+@-webkit-keyframes spinningWheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spinningWheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 footer p {
   text-align: center;
