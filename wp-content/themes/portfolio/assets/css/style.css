@@ -4518,6 +4518,26 @@ header::after {
   transition: opacity 1s; }
   .project-gallery .project-thumbnail:hover {
     opacity: 0.5; }
+  .project-gallery .project-thumbnail .project-thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.75); }
+    .project-gallery .project-thumbnail .project-thumbnail-overlay .spinning-ring {
+      width: 40px;
+      height: 40px;
+      border-width: 6px;
+      border-style: dashed;
+      border-color: blue;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
 
 .project-gallery .project-title {
   color: #404040;

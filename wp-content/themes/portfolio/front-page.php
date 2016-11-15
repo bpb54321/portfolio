@@ -45,7 +45,10 @@
 						<div class='small-12 medium-<?=$num_columns_project?> columns project-thumbnail-container'>
 							<a href='<?=$project_permalink?>'>
 								<div class='project-thumbnail project-thumbnail-<?=$project_count?>' style='background-image: url( <?=$image_src_string?> )'>
-							  </div>
+									<div class="project-thumbnail-overlay">
+										<div class="spinning-ring"></div>
+									</div>
+								</div>
 								<h5 class='project-title'><?=$project->post_title?></h5>
 						  </a>
 						</div>
