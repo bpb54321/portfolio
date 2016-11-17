@@ -4530,7 +4530,7 @@ header::after {
       height: 40px;
       border-width: 6px;
       border-style: dashed;
-      border-color: blue;
+      border-color: #575757;
       border-radius: 50%;
       margin: 0 auto;
       position: absolute;
@@ -4538,8 +4538,14 @@ header::after {
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      -webkit-animation: spinningWheel 3s infinite;
-      animation: spinningWheel 3s infinite; }
+      -webkit-animation-name: spinningWheel;
+      animation-name: spinningWheel;
+      -webkit-animation-duration: 1.2s;
+      animation-duration: 1.2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out; }
 
 .project-gallery .project-title {
   color: #404040;
@@ -4558,9 +4564,6 @@ header::after {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
@@ -4569,9 +4572,6 @@ header::after {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }

@@ -34,14 +34,17 @@
 				height: 40px;
 				border-width: 6px;
 				border-style: dashed;
-				border-color: blue;
+				border-color: $body-color;
 				border-radius: 50%;
 				margin: 0 auto;
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				animation: spinningWheel 3s infinite;
+				animation-name: spinningWheel;
+				animation-duration: 1.2s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in-out;
 			}
 		}
 	}
@@ -64,11 +67,9 @@
 	0% {
 		transform: rotate(0deg);
 	}
-
-	50% {
-		transform: rotate(180deg);
-	}
-
+	// 50% {
+	// 	transform: rotate(180deg);
+	// }
 	100% {
 		transform: rotate(360deg);
 	}
