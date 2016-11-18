@@ -4,7 +4,7 @@ function site_scripts() {
 
     // Load What-Input files in footer
     wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
-    
+
     // Adding Foundation scripts file in the footer
     wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), '6.2', true );
 
@@ -16,10 +16,13 @@ function site_scripts() {
 
     //Adding the Slick.js photo gallery framework
     wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick/slick.min.js', array( 'jquery' ), '', true );
-    
+
+    //Enqueue Images Loaded JS
+    wp_enqueue_script( 'images-loaded', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js', array( 'jquery' ), null, true );
+
     // Adding scripts file in the footer
-    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
-   
+    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery', 'images-loaded' ), '', true );
+
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.min.css', array(), '', 'all' );
 
@@ -27,5 +30,6 @@ function site_scripts() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
     }
+
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);

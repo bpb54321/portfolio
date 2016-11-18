@@ -11,6 +11,14 @@ jQuery(document).ready(function() {
   }
 });
 
+(function( $ ) {
+
+  $('.project-thumbnail').imagesLoaded( { background: true } ).progress( function( instance, image ) {
+    console.log('#container background images have loaded');
+  });
+
+})( jQuery );
+
 jQuery(document).foundation();
 jQuery(document).ready(function() {
   jQuery("#mobile-menu-link").on("click", function() {
