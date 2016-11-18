@@ -46,7 +46,7 @@
 							<a href='<?=$project_permalink?>'>
 								<div class='project-thumbnail project-thumbnail-<?=$project_count?>' style='background-image: url( <?=$image_src_string?> )'>
 									<div class="project-thumbnail-overlay">
-										<div class="spinning-ring"></div>
+										<div class="spinning-ring" style="animation-delay: <?php echo ($project_count%2) * .5; ?>s;"></div>
 									</div>
 								</div>
 								<h5 class='project-title'><?=$project->post_title?></h5>
